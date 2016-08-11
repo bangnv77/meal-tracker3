@@ -8,7 +8,7 @@ Installation
 
 First clone the repository.  
 ```
-$ git clone
+$ git clone https://github.com/bangnguyen77/Angular2-Template
 ```
 
 Remove the git remote url from the local repository.  
