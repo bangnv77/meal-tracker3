@@ -1,8 +1,13 @@
 <new-food-form (onSubmitNewFood)="passNewFoodUp($event)"></new-food-form>
+<select (change)="onCalorieFilterChange($event.target.value)" class="filter">
+  <option value="all">View All Foods</option>
+  <option value="high">View Foods with > 500 Calories</option>
+  <option value="low">View Foods with <= 500 Calories</option>
+</select>
 <div class="row table-header-row">
   <div class="col-xs-3"><strong>Name</strong></div>
   <div class="col-xs-3"><strong>Type</strong></div>
   <div class="col-xs-3"><strong>Details</strong></div>
   <div class="col-xs-3"><strong>Calories</strong></div>
 </div>
-<food-display *ngFor="#currentFood of foodList" [food]='currentFood'></food-display>
+<food-display *ngFor="#currentFood of foodList | caloriePipe:filterCalorie" [food]='currentFood'></food-display>
