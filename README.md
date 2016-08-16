@@ -1,4 +1,4 @@
-# _Angular2 App Template_
+# _Meal Tracker_
 
 ##### Template for web applications made with Angular2. However, the angular2 website just made some more updates.
 

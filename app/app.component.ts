@@ -1,14 +1,14 @@
 import { Component } from 'angular2/core';
-import { FoodComponent } from './food.component';
+import { FoodListComponent } from './food.component';
 import { Food } from './food.model';
 
 @Component({
   selector: 'my-app',
-  directives: [FoodComponent],
+  directives: [FoodListComponent],
   template: `
     <div class="container">
       <h1>Meal Tracker!</h1>
-      <food-display *ngFor="#currentFood of foodList" [food]=currentFood></food-display>
+      <food-display [foodList]='foodList'></food-display>
     </div>
   `
 })
@@ -16,6 +16,9 @@ import { Food } from './food.model';
 export class AppComponent {
   foodList=[
     new Food("Burrito", "Entree", "from Los Gorditos", 1500),
-    new Food("Spaghetti Bolognese", "Entree", "from Pastini", 1000)
+    new Food("Spaghetti Bolognese", "Entree", "from Pastini", 1000),
+    new Food("Nature Valley Bar", "Snack", "Oats and Honey, oh so yummy", 400),
+    new Food("Iceberg", "Salad", "basically water", 0),
+    new Food("Ranch Dressing", "Salad", "basically mayo", 200)
   ]
 }
