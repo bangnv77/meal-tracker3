@@ -2,3 +2,8 @@
   border-bottom: 1px solid black;
   margin-top: 20px;
 }
+
+.food-entry-row:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
