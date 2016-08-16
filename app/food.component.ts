@@ -3,11 +3,9 @@ import { Food } from './food.model';
 
 @Component({
   selector: 'food-display',
-  template: `
-    <h3>food component html works!</h3>
-  `
+  templateUrl: 'app/food.component.html'
 })
 
 export class FoodComponent {
-  
+  @Input() food: Food;
 }
