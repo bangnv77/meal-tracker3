@@ -1,6 +1,7 @@
-<input type="text" placeholder="Name pf Food">
+<!-- <input type="text" placeholder="Name pf Food">
 <input type="text" placeholder="Type pf Food">
 <input type="text" placeholder="Details">
 <input type="number" placeholder="Calories"><br>
-<button (click)="inputFood" class="btn-success">Add Food Item</button>
+<button (click)="inputFood" class="btn-success">Add Food Item</button> -->
+<new-food-form (onSubmitNewFood)="passNewFoodUp($event)"></new-food-form>
 <food-display *ngFor="#currentFood of foodList" [food]='currentFood'></food-display>

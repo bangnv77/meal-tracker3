@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component, EventEmitter } from 'angular2/core';
 import { FoodListComponent } from './food-list.component';
 import { Food } from './food.model';
 
@@ -8,7 +8,7 @@ import { Food } from './food.model';
   template: `
     <div class="container">
       <h1>Meal Tracker!</h1>
-      <food-list [foodList]='foodList'></food-list>
+      <food-list [foodList]='foodList' (onPassFoodUp)="addNewFoodToList($event)"></food-list>
     </div>
   `
 })
@@ -21,4 +21,8 @@ export class AppComponent {
     new Food("Iceberg", "Salad", "basically water", 0),
     new Food("Ranch Dressing", "Salad", "basically mayo", 200)
   ]
+
+  addNewFoodToList(newFood: Food) {
+    this.foodList.push(newFood);
+  }
 }
