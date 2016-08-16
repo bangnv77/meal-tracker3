@@ -14,8 +14,8 @@ import { Food } from './food.model';
 export class FoodListComponent {
   @Input() foodList: Food[];
   @Output() onPassFoodUp: EventEmitter<Food> = new EventEmitter();
-
   filterCalorie: string;
+  selectedFood: Food;
 
   passNewFoodUp(newFood: Food) {
   console.log("food received");
@@ -24,5 +24,13 @@ export class FoodListComponent {
 
   onCalorieFilterChange(newFilter: string) {
     this.filterCalorie = newFilter;
+  }
+
+  foodClicked(food: Food) {
+    this.selectedFood = food;
+  }
+
+  doneEditing() {
+    delete this.selectedFood;
   }
 }
