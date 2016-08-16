@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { FoodListComponent } from './food.component';
+import { FoodListComponent } from './food-list.component';
 import { Food } from './food.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Food } from './food.model';
   template: `
     <div class="container">
       <h1>Meal Tracker!</h1>
-      <food-display [foodList]='foodList'></food-display>
+      <food-list [foodList]='foodList'></food-list>
     </div>
   `
 })
